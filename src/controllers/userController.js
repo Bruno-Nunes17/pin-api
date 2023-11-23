@@ -12,3 +12,17 @@ exports.user = async (req, res) => {
   }
   res.status(200).json(userModel.user);
 };
+
+exports.createFolder = async (req, res) => {
+  const { userName, userEmail } = req;
+  req.body = { folder: req.body, userName, userEmail };
+  const userModel = new User(req.body);
+  await userModel.createFolder();
+  const { error } = userModel;
+  if (error.length > 0) {
+    res.status(500).json({ error });
+    return;
+  }
+  const { user } = userModel;
+  res.status(200).json({ user });
+};

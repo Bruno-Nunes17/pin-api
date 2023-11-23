@@ -13,6 +13,7 @@ module.exports = {
     'class-methods-use-this': 0,
     'import/no-extraneous-dependencies': 0,
     'import/first': 0,
+    "no-restricted-syntax": 0,
     quotes: 0,
   },
 };

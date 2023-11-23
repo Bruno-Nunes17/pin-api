@@ -8,6 +8,7 @@ const protectedRoutes = express.Router();
 const route = express.Router();
 
 protectedRoutes.get("/token", userController.user);
+protectedRoutes.post("/folder/create", userController.createFolder);
 
 route.get("/", homeController.index);
 route.post("/register", loginController.register);
